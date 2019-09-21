@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: '${DEPLOYMENT_WEB@microservice-home-config}'
+  namespace: '${NAMESPACE@microservice-config}'
+  labels:
+    app: '${DEPLOYMENT_WEB@microservice-home-config}'
+    moduleid: microservice-home-web-service
+    version: 1.70.0-master
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: '${DEPLOYMENT_WEB@microservice-home-config}'
+  template:
+    metadata:
+      labels:
+        app: '${DEPLOYMENT_WEB@microservice-home-config}'
+    spec:
+      containers:
+        -
+          name: app
+          image: 'repoflow/microservice-home-web-container:1.70.0-master'
+          env:
+            -
+              name: HOST
+              value: '${HOST@microservice-config}'
+            -
+              name: HOME_BASE_ROUTE_APP
+              value: '${BASE_ROUTE_APP@microservice-home-config}'
+            -
+              name: HOME_INTERNAL_PORT_APP
+              value: '${INTERNAL_PORT_APP@microservice-home-config}'
+            -
+              name: HOME_EXTERNAL_URL_GRAPH
+              value: '${EXTERNAL_URL_GRAPH@microservice-home-config}'
+            -
+              name: HOME_INTERNAL_URL_GRAPH
+              value: '${INTERNAL_URL_GRAPH@microservice-home-config}'
+          ports:
+            -
+              containerPort: '${INTERNAL_PORT_APP@microservice-home-config}'
