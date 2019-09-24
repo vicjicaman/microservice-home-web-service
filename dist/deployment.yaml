@@ -6,7 +6,7 @@ metadata:
   labels:
     app: home-web-deployment
     moduleid: microservice-home-web-service
-    version: 1.70.1-web-auth-home-config-prod
+    version: 1.70.2-web-auth-home-config-prod
 spec:
   replicas: 2
   selector:
