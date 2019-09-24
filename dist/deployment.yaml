@@ -37,6 +37,9 @@ spec:
             -
               name: HOME_INTERNAL_URL_GRAPH
               value: 'http://home-graph-service.microservices-namespace:4000/backend/graphql'
+            -
+              name: RESOURCE_BASE_ROUTE
+              value: /resources
           ports:
             -
               containerPort: 3000

@@ -37,6 +37,9 @@ spec:
             -
               name: HOME_INTERNAL_URL_GRAPH
               value: '${INTERNAL_URL_GRAPH@microservice-home-config}'
+            -
+              name: RESOURCE_BASE_ROUTE
+              value: '${BASE_ROUTE@microservice-resources-config}'
           ports:
             -
               containerPort: '${INTERNAL_PORT_APP@microservice-home-config}'
