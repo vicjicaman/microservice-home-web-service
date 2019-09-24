@@ -6,7 +6,7 @@ metadata:
   labels:
     app: '${DEPLOYMENT_WEB@microservice-home-config}'
     moduleid: microservice-home-web-service
-    version: 1.70.0-master
+    version: 1.70.1-web-auth-home-config-prod
 spec:
   replicas: 2
   selector:
@@ -20,7 +20,7 @@ spec:
       containers:
         -
           name: app
-          image: 'repoflow/microservice-home-web-container:1.70.0-master'
+          image: 'repoflow/microservice-home-web-container:1.70.1-web-auth-home-config-prod'
           env:
             -
               name: HOST
