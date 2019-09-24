@@ -5,7 +5,7 @@ metadata:
   namespace: microservices-namespace
   labels:
     moduleid: microservice-home-web-service
-    version: 1.70.1-web-auth-home-config-prod
+    version: 1.70.2-web-auth-home-config-prod
 spec:
   type: NodePort
   selector:
